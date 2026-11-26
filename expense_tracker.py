@@ -1,24 +1,5 @@
 expenses = []
 
-def delete_expense():
-    if not expenses:
-        print("Aucune dépense à supprimer.")
-        return
-
-    for number, expense in enumerate(expenses, start=1):
-        print(f"{number}. {expense['description']} - {expense['amount']:.2f}")
-
-    choice = input("Numéro de la dépense à supprimer : ").strip()
-    if not choice.isdigit():
-        print("Numéro de dépense invalide.")
-        return
-
-    index = int(choice) - 1
-    if 0 <= index < len(expenses):
-        removed = expenses.pop(index)
-        print(f"Dépense supprimée : {removed['description']}")
-    else:
-        print("Numéro de dépense invalide.")
 
 def add_expense():
     description = input("Description de la dépense : ")
